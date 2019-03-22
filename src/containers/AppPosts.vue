@@ -1,13 +1,63 @@
 <template>
-    <div>Posts</div>
+  <div>
+    <PostList :posts="posts" @onDelete="deletePost" ></PostList>
+  </div>
 </template>
 
 <script>
+import PostList from '../components/PostList.vue'
+import { posts } from '../services/posts'
+
 export default {
+  components: {
+    PostList
+  },
 
-}
+  created () {
+  this.$route.params.id && posts.get(this.$route.params.id)
+    .then((response) => {
+      this.post = response.data
+    })
+},
+
+  data () {
+    return {
+      posts: [],
+      post:{}
+    }
+  },
+
+  async created(){
+      console.log('hej get all posts')
+    try{
+      const {data} = await posts.getAll();
+      this.posts = data;
+      console.log(data)
+    }catch(error){
+      console.log(error);
+    }
+    
+  },
+
+//   beforeRouteEnter (to, from, next) {
+//     cars.getAll()
+//       .then((response) => {
+//         next((vm) => {
+//           vm.cars = response.data
+//         })
+//       }).catch((error) => {
+//         console.log(error)
+//       })
+//   },
+
+   methods: {
+   deletePost (post) {
+      posts.remove(post.id)
+        .then((success) => {
+          this.posts = this.posts.filter(c => c !== post)
+        })
+    }
+   }
+  }
+
 </script>
-
-<style>
-
-</style>
