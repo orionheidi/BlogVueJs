@@ -1,28 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-link to="/posts">App Posts</router-link>
+        <router-view />
+    <!-- <div class="container">
+      <div class="col-sm-10 offset-sm-1">
+        <router-view />
+      </div> -->
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import AppPosts from './containers/AppPosts.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    AppPosts
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
 </style>
+
