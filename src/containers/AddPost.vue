@@ -74,10 +74,11 @@ export default {
       return {
         title: '',
         text: '',
+        comments: []
       }
     },
      resetForm () {
-      this.car = this.getDefaultPost()
+      this.post = this.getDefaultPost()
     },
   },
 

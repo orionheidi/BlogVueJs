@@ -18,7 +18,7 @@ export default {
     .then((response) => {
       this.post = response.data
     })
-},
+  },
 
   data () {
     return {
@@ -35,29 +35,22 @@ export default {
       console.log(data)
     }catch(error){
       console.log(error);
-    }
-    
+    }   
   },
 
-//   beforeRouteEnter (to, from, next) {
-//     cars.getAll()
-//       .then((response) => {
-//         next((vm) => {
-//           vm.cars = response.data
-//         })
-//       }).catch((error) => {
-//         console.log(error)
-//       })
-//   },
-
    methods: {
-   deletePost (post) {
-      posts.remove(post.id)
-        .then((success) => {
-          this.posts = this.posts.filter(c => c !== post)
-        })
-    }
-   }
-  }
 
+  async deletePost (post){
+  console.log('hej post id deleted')
+    try{
+      const {data} = await posts.remove(post.id);
+      this.posts = this.posts.filter(c => c !== post)
+  }catch(error){
+      console.log(error);
+  }
+  
+},
+
+  }
+}
 </script>

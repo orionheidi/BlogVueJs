@@ -24,9 +24,12 @@ export default class Posts {
     }
 
   remove(id) {
-      return httpService.delete(`posts/${post.id}`)
+      return httpService.delete(`posts/${id}`)
     }
   
+  addComment (post,comment) {
+    return httpService.post(`/posts/${post.id}/comments`,comment)
+  }
 
 }
 

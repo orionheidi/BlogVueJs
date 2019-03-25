@@ -21,7 +21,6 @@ class HttpService {
     delete (url) {
         return http.delete(url)
       }
-
     
 
 }
