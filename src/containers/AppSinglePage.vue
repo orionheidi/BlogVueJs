@@ -11,7 +11,7 @@ import { posts } from '../services/posts'
 export default {
   components: {
     SinglePage
-      },
+  },
 
   data () {
     return {
@@ -26,7 +26,6 @@ export default {
       })
   },
 
-
   async get(){
       console.log('hej get all posts')
     try{
@@ -36,18 +35,7 @@ export default {
       console.log(data)
     }catch(error){
       console.log(error);
-    }
-    
+    }  
   },
-
 }
-
-//    deletePost (post) {
-//       posts.remove(post.id)
-//         .then((success) => {
-//           this.posts = this.posts.filter(c => c !== post)
-//         })
-//     }
-
-
 </script>

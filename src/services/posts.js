@@ -1,7 +1,6 @@
 
 import {httpService} from './HttpService';
 
-
 export default class Posts {
   // list() {
   //   return cars;
@@ -30,7 +29,6 @@ export default class Posts {
   addComment (post,comment) {
     return httpService.post(`/posts/${post.id}/comments`,comment)
   }
-
 }
 
 export const posts = new Posts();

@@ -38,8 +38,7 @@ export default {
     }   
   },
 
-   methods: {
-
+  methods: {
   async deletePost (post){
   console.log('hej post id deleted')
     try{
@@ -47,10 +46,8 @@ export default {
       this.posts = this.posts.filter(c => c !== post)
   }catch(error){
       console.log(error);
-  }
-  
+  } 
 },
-
   }
 }
 </script>

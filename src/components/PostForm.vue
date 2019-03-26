@@ -14,10 +14,7 @@
     </div>
     <div class="form-group row">
       <div class="offset-4 col-8">
-
-        <button name="reset" type="reset" class="btn btn-primary">Reset</button>
-        &nbsp
-        <!-- <button name="preview" type="button" @click="preview" class="btn btn-default">Preview</button> -->
+        <button name="reset" type="reset" class="btn btn-primary mr-2">Reset</button>       
         <button name="submit" type="submit" class="btn btn-primary">Submit</button>
       </div>
     </div>
@@ -28,6 +25,7 @@
 import capitalize from 'lodash/capitalize'
 
 export default {
+  
   props: {
     post: Object
   },
@@ -40,7 +38,6 @@ export default {
   onReset () {
       this.$emit('onReset')
     },
-
-}
+  }
 }
 </script>

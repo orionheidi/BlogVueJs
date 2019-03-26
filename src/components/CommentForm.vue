@@ -26,7 +26,6 @@ export default {
     onSubmit () {
       this.$emit('onSubmit')
     },
-
-}
+  }
 }
 </script>
